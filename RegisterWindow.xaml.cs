@@ -17,8 +17,34 @@ namespace Contact_manager {
 	/// Interaction logic for RegisterWindow.xaml
 	/// </summary>
 	public partial class RegisterWindow : Window {
+
+		bool IsClosed = false;
 		public RegisterWindow() {
 			InitializeComponent();
+		}
+
+
+		private void GoToRegisterWindow_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
+
+			MainWindow main = new MainWindow();
+			main.Show();
+			Close();
+
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e) {
+
+			Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+			dlg.DefaultExt=".png";
+			dlg.Filter="JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+			Nullable<bool> result = dlg.ShowDialog();
+			if (result.HasValue && result.Value) {
+				string filename = dlg.FileName;
+				PictureBox.Source = new BitmapImage(new Uri(dlg.FileName));
+			}
+
 		}
 	}
 }
