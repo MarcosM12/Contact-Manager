@@ -75,7 +75,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="76,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="207" FontFamily="Arial" FontSize="28" RenderTransformOrigin="0.695,0.479" TextDecorations="Underline" Text="Account Log in" Foreground="Black">
+        <TextBlock HorizontalAlignment="Left" Margin="71,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="221" FontFamily="Arial" FontSize="28" RenderTransformOrigin="0.695,0.479" TextDecorations="Underline" Text="Contact Manager" Foreground="Black">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -88,7 +88,7 @@
         <xctk:WatermarkTextBox Watermark="Username" Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="35" Margin="32,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="278" FontSize="16"/>
         <xctk:WatermarkPasswordBox Watermark="Password" Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="35" Margin="32,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="278" FontSize="16"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="61,228,0,0" VerticalAlignment="Top" Width="217" Height="40" Background="#FF36B258" Foreground="White" FontFamily="Arial" FontSize="20" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" RenderTransformOrigin="0.399,0.525"/>
-        <TextBlock x:Name="GoToRegisterWindow" PreviewMouseDown="Button_Click" Margin="42,330,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" HorizontalAlignment="Left" Width="268" Foreground="Black" TextDecorations="Underline"><Run Text="Don't have an account yet "/><Run Text="? "/><Run Text="Sign up"/></TextBlock>
+        <TextBlock x:Name="GoToRegisterWindow" PreviewMouseDown="Button_Click" Margin="26,330,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18" HorizontalAlignment="Left" Width="300" Foreground="Black" TextDecorations="Underline"><Run Text="Don't have an account yet "/><Run Text="? "/><Run Text="Sign up"/></TextBlock>
 
     </Grid>
 </Window>
