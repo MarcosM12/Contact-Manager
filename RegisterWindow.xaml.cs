@@ -24,10 +24,10 @@ namespace Contact_manager {
 			InitializeComponent();
 		}
 
-
+	
 		private void GoToRegisterWindow_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
 
-			MainWindow main = new MainWindow();
+			LoginWindow main = new LoginWindow();
 			main.Show();
 			Close();
 
@@ -83,13 +83,24 @@ namespace Contact_manager {
 
 			//Check empty fields (namely, username and password fields)
 			if (!CheckEmptyFields(user, password, PictureBox.Source)) {
-				var newuser = new user();
-				String message = newuser.add_user_to_DB(firstname, lastname, user, password, PictureBox.Source);
-				if(message==null) {
-					MessageBox.Show("Registration Successful", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
+				var newuser = new User();
+				if (newuser.is_registered(user)) {
+				
+					MessageBox.Show("This username already exists!!!", "Invalid Username", MessageBoxButton.OK, MessageBoxImage.Error);
+
 				}
 				else {
-					MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+					String message = newuser.add_user_to_DB(firstname, lastname, user, password, PictureBox.Source);
+					if(message==null) {
+						MessageBox.Show("Registration Successful", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
+						LoginWindow main = new LoginWindow();
+						main.Show();
+						Close();
+					}
+					else {
+						MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+					}
+				
 				}
 				
 			}
