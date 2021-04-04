@@ -95,9 +95,9 @@
         <Border Height="116" Width="133" HorizontalAlignment="Left" Margin="159,309,0,0" VerticalAlignment="Top" Background="White">
             <Image x:Name="PictureBox" Stretch="Fill" />
         </Border>
-        <TextBox Name="first_name" HorizontalAlignment="Left" Height="28" Margin="159,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="16"/>
+        <TextBox Name="first_name" HorizontalAlignment="Left" Height="28" Margin="157,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" FontSize="16"/>
         <TextBox Name="last_name" HorizontalAlignment="Left" Margin="157,147,0,0" VerticalAlignment="Top" Height="26" Width="219" FontSize="16" RenderTransformOrigin="0.364,0.462"/>
-        <TextBlock HorizontalAlignment="Left" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="119" FontFamily="Arial" FontSize="20" RenderTransformOrigin="0.5,0.5" TextDecorations="{x:Null}" Foreground="#FFFDFDFD">
+        <TextBlock HorizontalAlignment="Left" Margin="51,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="119" FontFamily="Arial" FontSize="20" RenderTransformOrigin="0.5,0.5" TextDecorations="{x:Null}" Foreground="#FFFDFDFD">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

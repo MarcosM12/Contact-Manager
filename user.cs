@@ -62,6 +62,33 @@ namespace Contact_manager {
 			catch(Exception e){
 				return e.Message;
 			}
+		}
+
+		//Get user's password from the contact manager database
+		public String get_password(String username) {
+			try {
+				
+				var con = db.GetMySqlConnection;
+				db.OpenMySqlConnection();
+				var cmd = new MySqlCommand("get_password", con);
+				cmd.CommandType = System.Data.CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("user", username);
+				//Use MySqlDataReader to read the SELECT statement result
+				MySqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+				if (reader.Read()) {
+					String user_pass = (String)reader.GetValue(0);
+					db.CloseMySqlConnection();
+					return user_pass;	
+				}
+				else {
+					db.CloseMySqlConnection();
+					return null;
+				}
+				
+			}
+			catch(Exception e){
+				return e.Message;
+			}
 
 
 		}
