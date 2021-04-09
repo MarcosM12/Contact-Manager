@@ -12,22 +12,8 @@ namespace Contact_manager {
 	/// Interaction logic for App.xaml
 	/// </summary>
 	public partial class App : Application {
+		
 
-		private void Application_Startup(object sender, StartupEventArgs e) {
-			
-			// Create startup windows
-			LoginWindow login = new LoginWindow();
-			MainWindow main = new MainWindow();
-			// Show the login window
-			login.ShowDialog();
-			if (login.DialogResult.HasValue || login.DialogResult.Value)
-			{	//Show main window
-				main.Show();
-				
-			}
-			
-
-		}	
 	}
 
 	

@@ -22,14 +22,14 @@ namespace Contact_manager {
 
 		public LoginWindow() {
 			InitializeComponent();
-		
+			
 		}
-
+		
 		private void Button_Click(object sender, RoutedEventArgs e) {
 
-			RegisterWindow register = new RegisterWindow();
+			RegisterWindow register = new RegisterWindow(this);
 			register.Show();
-			Close();
+			Hide();
 
 
 		}
@@ -45,8 +45,10 @@ namespace Contact_manager {
 				if (user_password!=null) {
 					if (user_password.Equals(given_user_password)) {
 						//MessageBox.Show("Login Succesful", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+						MainWindow main = new MainWindow();
 						Close();
-
+						main.Show();
+						
 					}
 						
 					else
@@ -62,7 +64,7 @@ namespace Contact_manager {
 			}
 		}
 
-	
+
 	}
 	
 	

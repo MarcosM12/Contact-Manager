@@ -19,17 +19,18 @@ namespace Contact_manager {
 	/// </summary>
 	public partial class RegisterWindow : Window {
 
-		
-		public RegisterWindow() {
+		private LoginWindow login_wind;
+		public RegisterWindow(LoginWindow login) {
 			InitializeComponent();
+			login_wind = login;
 		}
 
 	
 		private void GoToRegisterWindow_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
 
-			LoginWindow main = new LoginWindow();
-			main.Show();
+			login_wind.Show();
 			Close();
+			
 
 		}
 
@@ -93,9 +94,9 @@ namespace Contact_manager {
 					String message = newuser.add_user_to_DB(firstname, lastname, user, password, PictureBox.Source);
 					if(message==null) {
 						MessageBox.Show("Registration Successful", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
-						LoginWindow main = new LoginWindow();
-						main.Show();
 						Close();
+						login_wind.Show();
+						
 					}
 					else {
 						MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
