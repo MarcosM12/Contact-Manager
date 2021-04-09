@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Contact_manager"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="Contact Manager" Height="589.5" Width="426.875">
     <Window.Resources>
         <Style x:Key="FocusVisual">
