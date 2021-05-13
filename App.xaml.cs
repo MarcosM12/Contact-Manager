@@ -12,7 +12,7 @@ namespace Contact_manager {
 	/// Interaction logic for App.xaml
 	/// </summary>
 	public partial class App : Application {
-		
+		public static String usersd { get; set; }	 //username	in mainWindow
 
 	}
 

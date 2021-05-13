@@ -5,9 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contact_manager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="551.575" Width="906.577"
+        Title="MainWindow" Height="552" Width="908"
         ResizeMode="NoResize">
-    <Grid>
-
+    <Grid Background="#3c414e">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="82" VerticalAlignment="Bottom" Width="902" Margin="0,0,0,431" Background="#FF1F1F21">
+            <Border Height="67" Width="113" HorizontalAlignment="Left" Margin="8,7,0,0" VerticalAlignment="Top" Background="Black" BorderThickness="1" BorderBrush="White">
+                <Image x:Name="ImageBox" Stretch="Fill" Margin="0,0,-1,0" HorizontalAlignment="Left" Width="111" />
+            </Border>
+        </Border>
+        <Label x:Name="user_window_label" HorizontalAlignment="Left" Height="35" Margin="136,13,0,0"  VerticalAlignment="Top" Width="171" Foreground="White" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="GoToEditProfileWindow" PreviewMouseDown="GoToEditProfileWindow_PreviewMouseDown"  Margin="139,53,0,0" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Left" Width="100" Foreground="White" TextDecorations="Underline" FontSize="14"><Run Text="Edit my "/><Run Text="p"/><Run Text="rofile"/></TextBlock>
+        <TextBlock x:Name="GoToLoginWindow" PreviewMouseDown="GoToLoginWindow_PreviewMouseDown"  Margin="255,53,0,0" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Left" Width="46" Foreground="White" TextDecorations="Underline" FontSize="14" Text="Logout"/>
+        <GridSplitter HorizontalAlignment="Left" Height="14" Margin="244,58,0,0" VerticalAlignment="Top" Width="2" RenderTransformOrigin="0.5,0.5">
+            <GridSplitter.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.63"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </GridSplitter.RenderTransform>
+        </GridSplitter>
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,13 +57,17 @@ namespace Contact_manager {
 
 			Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
 
-			dlg.DefaultExt=".png";
-			dlg.Filter="JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+			dlg.DefaultExt="PNG Files (*.png)";
+			dlg.Filter="PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg|TIFF Files (*.tiff)|*.tiff";
 
 			Nullable<bool> result = dlg.ShowDialog();
 			if (result.HasValue && result.Value) {
 				string filename = dlg.FileName;
-				PictureBox.Source = new BitmapImage(new Uri(dlg.FileName));
+				BitmapImage bitmap = new BitmapImage();  
+				bitmap.BeginInit();  
+				bitmap.UriSource = new Uri(filename);  
+				bitmap.EndInit();
+				PictureBox.Source=bitmap;
 			}
 
 		}
@@ -90,7 +95,6 @@ namespace Contact_manager {
 			return false;
 		}
 
-
 		
 		private void Register_Click(object sender, RoutedEventArgs e) {
 
@@ -109,7 +113,12 @@ namespace Contact_manager {
 
 				}
 				else {
-					String message = newuser.add_user_to_DB(firstname, lastname, user, password, PictureBox.Source);
+					ImageSource img = PictureBox.Source;
+					String filepath = ((System.Windows.Media.Imaging.BitmapImage)img).UriSource.ToString();
+					if (filepath != null) {
+						filepath=filepath.Replace("file:///", " ");	
+					}
+					String message = newuser.add_user_to_DB(firstname, lastname, user, password, filepath);
 					if(message==null) {
 						MessageBox.Show("Registration Successful", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
 						Close();

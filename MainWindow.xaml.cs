@@ -21,13 +21,23 @@ namespace Contact_manager {
 
 	public partial class MainWindow : Window {
 
-		
+		private LoginWindow back_to_login; //MainWindow is the child window of LoginWindow
 
-		public MainWindow() {
+		public MainWindow(ImageSource pic, LoginWindow loginW) {
 			InitializeComponent();
-			
+			if(pic!=null)
+				ImageBox.Source=pic;
+			user_window_label.Content="Welcome back, "+ App.usersd;
+			back_to_login=loginW;
 		}
 
-		
+		private void GoToEditProfileWindow_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
+
+		}
+
+		private void GoToLoginWindow_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
+			Close();
+			back_to_login.Show();
+		}
 	}
 }

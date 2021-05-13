@@ -39,13 +39,18 @@ namespace Contact_manager {
 			String user_name = usernameText.Text;
 			String given_user_password = passwordText.Password;
 			User newuser = new User();
-
+			App.usersd=user_name;
+			MainWindow main = new MainWindow(newuser.get_picture(user_name), this);
+			Hide();
+			main.Show();
+			/*
 			if (newuser.is_registered(user_name)) {
 				String user_password = newuser.get_password(user_name);
 				if (user_password!=null) {
 					if (user_password.Equals(given_user_password)) {
 						//MessageBox.Show("Login Succesful", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-						MainWindow main = new MainWindow();
+						App.usersd=user_name;
+						MainWindow main = new MainWindow(newuser.get_picture(user_name));
 						Close();
 						main.Show();
 						
@@ -62,6 +67,7 @@ namespace Contact_manager {
 			else {
 				MessageBox.Show("Invalid username", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
+			*/
 		}
 
 
